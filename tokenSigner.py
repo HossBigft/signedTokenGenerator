@@ -9,7 +9,7 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from cryptography.hazmat.backends import default_backend
 
 KEY_PATH = "ed25519_private.pem"
-PUBKEY_PATH = "ed25519_pub.txt" 
+PUBKEY_PATH = "pub.key" 
 
 def load_or_generate_key():
     if os.path.exists(KEY_PATH):
