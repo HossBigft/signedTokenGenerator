@@ -63,9 +63,7 @@ def generate_command_token(command, expiry_seconds=300):
         "expiry": expiry,
         "command": command
     }
-
-    # Convert the token data to a JSON string (excluding signature)
-    message = json.dumps(token_data)
+    message = "|".join(str(item) for item in token_data.values())
     print(repr(message))
     # Sign the message
     signature = sign_with_ed25519(private_key, message)
