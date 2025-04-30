@@ -73,9 +73,11 @@ def generate_command_token(command, expiry_seconds=300):
 
     # Convert the entire token to a JSON string
     signed_token_json = json.dumps(token_data)
+    encoded_json = base64.b64encode(signed_token_json.encode('utf-8')).decode('utf-8')
+
 
     return {
-        "token": signed_token_json,
+        "token": encoded_json,
         "expires_at": expiry,
         "command": command
     }
