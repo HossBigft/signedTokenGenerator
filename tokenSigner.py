@@ -61,7 +61,7 @@ def generate_command_token(command, expiry_seconds=300):
         "timestamp": timestamp,
         "nonce": nonce,
         "expiry": expiry,
-        "command": command
+        "operation": command
     }
     message = "|".join(str(item) for item in token_data.values())
     print(repr(message))
